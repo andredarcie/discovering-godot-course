@@ -1,7 +1,7 @@
 extends Control
 
 onready var displayText = $VBoxContainer/DisplayText
-onready var playerText = $VBoxContainer/PlayerText
+onready var playerText = $VBoxContainer/HBoxContainer/PlayerText
 
 func _ready():
 	var prompts = ["Yann", "Minions", "greatest"]
@@ -16,3 +16,7 @@ func _on_PlayerText_text_entered(new_text):
 func update_DisplayText(words: String):
 	displayText.text = words
 	playerText.clear()
+
+
+func _on_TextureButton_pressed():
+	update_DisplayText(playerText.text)
