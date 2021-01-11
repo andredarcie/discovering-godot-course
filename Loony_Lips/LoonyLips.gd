@@ -4,15 +4,10 @@ onready var DisplayText = $VBoxContainer/DisplayText
 onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
 
 var player_words = []
-var template = [{
-		"prompts": ["a name", "a noun", "adverb", "adjective"],
-		"story": "Once upon a time someone called %s ate a %s flavoured sandwitch which made him fell all %s inside. Is was a %s day"
-	},
-	{
-		"prompts": ["a noun", "a name", "an adjective", "another name"],
-		"story": "There once was a %s called name who searched far the mythical %s noun of %s."
-	}]
-var current_story
+var current_story = {
+	"prompts": [],
+	"story": ""
+}
 
 func _ready():
 	pick_current_story()
@@ -20,9 +15,14 @@ func _ready():
 	check_player_words_length()
 	PlayerText.grab_focus()
 
+
 func pick_current_story():
 	randomize()
-	current_story = template[randi() % template.size()]
+	var stories = $StoryBook.get_child_count()
+	var selected_story = randi() % stories
+	current_story.prompts = $StoryBook.get_child(selected_story).prompts
+	current_story.story = $StoryBook.get_child(selected_story).story
+	
 
 func _on_PlayerText_text_entered(new_text):
 	add_to_player_words()
@@ -41,6 +41,7 @@ func add_to_player_words():
 	PlayerText.clear()
 	check_player_words_length()
 	
+	
 func is_story_done():
 	return player_words.size() == current_story.prompts.size()
 	
@@ -58,6 +59,7 @@ func tell_story():
 	
 func prompt_player():
 	DisplayText.text += "May I have " + current_story.prompts[player_words.size()] + " please?"
+	
 	
 func end_game():
 	PlayerText.queue_free()
