@@ -1,0 +1,10 @@
+[
+    {
+        "prompts": ["a name", "a noun", "adverb", "adjective"],
+        "story": "Once upon a time someone called %s ate a %s flavoured sandwitch which made him fell all %s inside. Is was a %s day"
+    },
+    {
+        "prompts": ["a noun", "a name", "an adjective", "another name"],
+        "story": "There once was %s called %s who searched far and wide for the mythical %s noun of %s."
+    }
+]
