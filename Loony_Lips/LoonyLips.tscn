@@ -48,9 +48,9 @@ __meta__ = {
 }
 
 [node name="DisplayText" type="Label" parent="VBoxContainer"]
-margin_top = 74.0
+margin_top = 75.0
 margin_right = 976.0
-margin_bottom = 474.0
+margin_bottom = 475.0
 rect_min_size = Vector2( 0, 400 )
 custom_fonts/font = SubResource( 1 )
 text = "Placeholder Text"
