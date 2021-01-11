@@ -17,9 +17,8 @@ func _ready():
 
 
 func pick_current_story():
-	var stories = get_from_json("StoryBook.json")
 	randomize()
-	current_story = stories[randi() % stories.size()]
+	get_from_nodes()
 
 
 func get_from_json(filename):
@@ -28,7 +27,7 @@ func get_from_json(filename):
 	var text = file.get_as_text()
 	var data = parse_json(text)
 	file.close()
-	return data
+	current_story = data[randi() % data.size()]
 	
 
 func get_from_nodes():
