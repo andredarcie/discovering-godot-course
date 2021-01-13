@@ -27,7 +27,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 1279.27, 755.75 )
+position = Vector2( 1590.4, 829.289 )
 __meta__ = {
 "_edit_group_": true
 }
