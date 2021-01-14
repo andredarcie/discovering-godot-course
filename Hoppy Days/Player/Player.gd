@@ -34,7 +34,7 @@ func apply_gravity():
 func jump():
 	if is_on_floor() and Input.is_action_pressed("Jump"):
 		motion.y -= JUMP_SPEED
-		
+		$JumpSFX.play()
 		
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
@@ -56,6 +56,6 @@ func hurt():
 	yield(get_tree(), "idle_frame")
 	motion.y -= JUMP_SPEED
 	lives -= 1
-	
+	$PainSFX.play()
 	if lives < 0:
 		end_game()

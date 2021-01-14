@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Hazards/SpikeTop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=4]
 
 [node name="Level1" type="Node2D"]
 
@@ -22,3 +23,8 @@ position = Vector2( 1822.63, 940.588 )
 
 [node name="SpikeTop2" parent="Hazards" instance=ExtResource( 3 )]
 position = Vector2( 2732.29, 1197.61 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
