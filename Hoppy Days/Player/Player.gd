@@ -40,7 +40,3 @@ func move():
 		
 func animate():
 	emit_signal("animate", motion)
-
-
-func _on_Player_animate():
-	pass # Replace with function body.
