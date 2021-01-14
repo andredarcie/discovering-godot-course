@@ -20,6 +20,8 @@ func _physics_process(delta):
 func apply_gravity():
 	if not is_on_floor():
 		motion.y += GRAVITY
+	elif is_on_ceiling():
+		motion.y = 1
 	else:
 		motion.y = 0
 		
