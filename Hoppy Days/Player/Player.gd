@@ -8,6 +8,8 @@ const UP = Vector2(0, -1)
 const JUMP_SPEED = 3000
 const WORLD_LIMIT = 4000
 
+var lives = 3
+
 signal animate
 
 func _physics_process(delta):
@@ -48,3 +50,12 @@ func animate():
 
 func end_game():
 	get_tree().change_scene("res://Levels/EndGame.tscn")
+
+func hurt():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y -= JUMP_SPEED
+	lives -= 1
+	
+	if lives < 0:
+		end_game()
