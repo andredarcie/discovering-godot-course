@@ -9,8 +9,6 @@ const JUMP_SPEED = 3000
 const WORLD_LIMIT = 4000
 const BOOST_MULTIPLIER = 1.5
 
-var lives = 3
-
 signal animate
 
 func _physics_process(delta):
@@ -23,7 +21,7 @@ func _physics_process(delta):
 	
 func apply_gravity():
 	if position.y > WORLD_LIMIT:
-		end_game()
+		get_tree().call_group("Gamestate", "end_game")
 	if not is_on_floor():
 		motion.y += GRAVITY
 	elif is_on_ceiling():
@@ -48,18 +46,14 @@ func move():
 		
 func animate():
 	emit_signal("animate", motion)
+	
 
-func end_game():
-	get_tree().change_scene("res://Levels/EndGame.tscn")
 
 func hurt():
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y -= JUMP_SPEED
-	lives -= 1
 	$PainSFX.play()
-	if lives < 0:
-		end_game()
 
 func boost():
 	position.y -= 1
