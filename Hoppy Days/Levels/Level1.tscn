@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://NPCs/Spikeman.tscn" type="PackedScene" id=9]
 [ext_resource path="res://NPCs/Cloud.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Items/Portal.tscn" type="PackedScene" id=11]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 6 )
@@ -21,7 +22,7 @@ position = Vector2( 1398.07, 939.221 )
 tile_set = ExtResource( 2 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -655342, 1, 0, -524246, 3, 0, -393214, 2, 0, -393196, 6, 0, -327669, 1, 0, -327649, 1, 0, -327628, 3, 0, -262128, 7, 0, -262081, 3, 0, -65544, 2, 0, 54, 1, 0, 131072, 3, 0, 131131, 1, 0, 196623, 2, 0, 196655, 0, 0, 262176, 6, 0, 262210, 1, 0, 327685, 2, 0, 327704, 6, 0, 393255, 0, 0, 589820, 5, 0, 655339, 2, 0, 655375, 0, 0, 786424, 4, 0, 720897, 5, 0, 720949, 3, 0, 851978, 0, 0, 983066, 2, 0, 1114132, 3, 0, 1114163, 2, 0, 1245214, 1, 0, 1245224, 2, 0, 1310732, 2, 0, 1441825, 2, 0, 1572853, 2, 0, 1638402, 2, 0, 1638425, 2, 0, 1769485, 2, 0, 1769493, 2, 0 )
+tile_data = PoolIntArray( 589820, 5, 0, 655339, 2, 0, 655375, 0, 0, 786424, 4, 0, 720897, 5, 0, 851978, 0, 0, 852007, 2, 0, 852036, 2, 0, 852045, 2, 0, 983066, 2, 0, 1114132, 3, 0, 1114163, 2, 0, 1114170, 2, 0, 1245224, 2, 0, 1310732, 2, 0, 1310785, 2, 0, 1441825, 2, 0, 1572853, 2, 0, 1507382, 2, 0, 1638402, 2, 0, 1638425, 2, 0, 1769485, 2, 0, 1769493, 2, 0 )
 
 [node name="Hazards" type="Node" parent="."]
 
@@ -57,10 +58,37 @@ position = Vector2( 1450.89, 1609.63 )
 [node name="Coin3" parent="Coins" instance=ExtResource( 8 )]
 position = Vector2( 1092.13, 1628.67 )
 
+[node name="Coin4" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 2552.48, 758.171 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 2666.64, 758.171 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 2799.83, 753.414 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 3784.5, 1024.55 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 3984.28, 1015.04 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 4336.29, 1210.07 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 4521.8, 772.441 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 2438.31, 1343.26 )
+
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Spikeman" parent="NPCs" instance=ExtResource( 9 )]
-position = Vector2( 977.98, 1208.11 )
+position = Vector2( 3492.02, 1005.78 )
 
 [node name="Cloud" parent="NPCs" instance=ExtResource( 10 )]
-position = Vector2( 1623.46, 517.243 )
+position = Vector2( 1316.97, 35.0704 )
+
+[node name="Portal" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5099.73, 706.769 )
