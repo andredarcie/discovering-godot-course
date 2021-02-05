@@ -8,14 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "TemplateCharacter",
+"language": "GDScript",
+"path": "res://Characters/TemplateCharacter.gd"
+} ]
 _global_script_class_icons={
-
+"TemplateCharacter": ""
 }
 
 [application]
 
 config/name="HeistMeisters"
+run/main_scene="res://Characters/Player.tscn"
 config/icon="res://icon.png"
 
 [input]
