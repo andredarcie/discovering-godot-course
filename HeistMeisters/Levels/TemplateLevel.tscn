@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Camera.tscn" type="PackedScene" id=3]
 
 [node name="TemplateLevel" type="Node2D"]
 
@@ -17,3 +18,8 @@ current = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.207843, 0.184314, 0.184314, 1 )
+
+[node name="Cameras" type="Node" parent="."]
+
+[node name="Camera" parent="Cameras" instance=ExtResource( 3 )]
+position = Vector2( -151.453, -146.107 )
