@@ -47,6 +47,12 @@ move_right={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Tilemap"
+2d_physics/layer_3="NPC"
+
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )

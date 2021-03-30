@@ -34,6 +34,8 @@ texture = ExtResource( 2 )
 [node name="CameraBody" type="KinematicBody2D" parent="."]
 position = Vector2( 12.3167, -0.472469 )
 rotation = -0.523599
+collision_layer = 4
+collision_mask = 2147483651
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
